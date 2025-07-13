@@ -4,7 +4,15 @@ export const HomePage = () => {
   return (
     <>
       <TaskItem
-        task={{ id: 1, title: 'hello', category: 'epic', status: 'done', priority: 'high' }}
+        task={{
+          id: 1,
+          title: 'hello',
+          description:
+            'weojweiowekhwehuwheuihweufhweufhwuiehfwuefhwueifhweiofhweuifhweufhweufhweufowefw wejhwehwuerhweurhweurhweweohwe',
+          category: 'Bug',
+          status: 'Done',
+          priority: 'High',
+        }}
       />
     </>
   );

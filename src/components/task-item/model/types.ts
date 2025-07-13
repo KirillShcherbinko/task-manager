@@ -1,8 +1,6 @@
-export type TTaskCategory = 'epic' | 'story' | 'task' | 'sub-task' | 'bug';
-
-export type TTaskStatus = 'to do' | 'in progress' | 'in review' | 'done';
-
-export type TTaskPriority = 'highest' | 'high' | 'medium' | 'low' | 'lowest';
+export type TTaskCategory = 'Bug' | 'Feature' | 'Documentation' | 'Refactor' | 'Test';
+export type TTaskStatus = 'To Do' | 'In Progress' | 'Done';
+export type TTaskPriority = 'High' | 'Medium' | 'Low';
 
 export type TTaskItem = {
   id: number;
