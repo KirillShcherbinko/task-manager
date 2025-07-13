@@ -1,19 +1,9 @@
-import { TaskItem } from '@/components/task-item';
+import { TaskList } from '@/components/task-list';
 
 export const HomePage = () => {
   return (
     <>
-      <TaskItem
-        task={{
-          id: 1,
-          title: 'hello',
-          description:
-            'weojweiowekhwehuwheuihweufhweufhwuiehfwuefhwueifhweiofhweuifhweufhweufhweufowefw wejhwehwuerhweurhweurhweweohwe',
-          category: 'Bug',
-          status: 'Done',
-          priority: 'High',
-        }}
-      />
+      <TaskList />
     </>
   );
 };

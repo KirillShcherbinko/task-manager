@@ -9,9 +9,9 @@ import {
   SystemEditSolid,
   SystemTimeOutline,
 } from '@admiral-ds/icons';
-import { Chips, Divider, T, Tag } from '@admiral-ds/react-ui';
+import { Divider, T } from '@admiral-ds/react-ui';
 
-import { ActionButton } from '@/shared';
+import { ActionButton, IconTag } from '@/shared';
 
 import { CATEGORY_ICON_MAP, PRIORITY_KIND_MAP, STATUS_KIND_MAP } from '../model/consts';
 import type { TTaskItem } from '../model/types';
@@ -46,9 +46,6 @@ export const TaskItem = ({ task }: ITaskItemProps) => {
           <T as="h3" font="Additional/L-bold">
             {title}
           </T>
-          <Chips appearance="filled" dimension="s" iconStart={categoryIcon}>
-            {category}
-          </Chips>
         </div>
         <div className={Style.ButtonGroup}>
           <ActionButton onClick={handleEditTask} icon={<SystemEditSolid />} />
@@ -66,12 +63,13 @@ export const TaskItem = ({ task }: ITaskItemProps) => {
       </main>
       <Divider />
       <footer className={Style.Footer}>
-        <Tag statusViaBackground kind={statusKind} icon={<SystemTimeOutline />}>
+        <IconTag icon={categoryIcon}>{category}</IconTag>
+        <IconTag kind={statusKind} icon={<SystemTimeOutline />}>
           {status}
-        </Tag>
-        <Tag statusViaBackground kind={priorityKind} icon={<SystemArrowUpOutline />}>
+        </IconTag>
+        <IconTag kind={priorityKind} icon={<SystemArrowUpOutline />}>
           {priority}
-        </Tag>
+        </IconTag>
       </footer>
     </div>
   );

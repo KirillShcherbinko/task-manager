@@ -23,13 +23,13 @@ export const CATEGORY_ICON_MAP: Record<TTaskCategory, ReactElement> = {
 ////////// Константы для статуса //////////
 export const STATUS_KIND_MAP: Record<TTaskStatus, TagKind> = {
   'To Do': 'danger',
-  'In Progress': 'warning',
+  'In Progress': 'primary',
   'Done': 'success',
 };
 
 ////////// Констатны для приоритетов //////////
 export const PRIORITY_KIND_MAP: Record<TTaskPriority, TagKind> = {
   High: 'danger',
-  Medium: 'warning',
+  Medium: 'primary',
   Low: 'success',
 };

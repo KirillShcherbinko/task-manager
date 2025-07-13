@@ -1,7 +1,8 @@
 import type { TTaskCategory, TTaskItem, TTaskPriority, TTaskStatus } from '@/components/task-item';
+import { initialTasks } from '@/data';
 import { atom } from 'jotai';
 
-export const tasksAtom = atom<TTaskItem[]>([]);
+export const tasksAtom = atom<TTaskItem[]>(initialTasks);
 export const editedTaskAtom = atom<TTaskItem | null>(null);
 
 ////////// Действия над списком задач //////////
@@ -17,7 +18,7 @@ export const updateTaskAtom = atom(
   null,
   (_get, set, taskToUpdateId: number, newTaskData: Partial<TTaskItem>) => {
     set(tasksAtom, (tasks) =>
-      tasks.map((task) => (task.id === taskToUpdateId ? { ...task, newTaskData } : task)),
+      tasks.map((task) => (task.id === taskToUpdateId ? { ...task, ...newTaskData } : task)),
     );
   },
 );
