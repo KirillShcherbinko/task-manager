@@ -1,15 +1,11 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { ThemeProvider } from "styled-components";
-import {
-  LIGHT_THEME,
-  FontsVTBGroup,
-  DropdownProvider,
-} from "@admiral-ds/react-ui";
-import "./index.css";
-import App from "./App.tsx";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ThemeProvider } from 'styled-components';
+import { LIGHT_THEME, FontsVTBGroup, DropdownProvider } from '@admiral-ds/react-ui';
+import './index.css';
+import App from './app/App.tsx';
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider theme={LIGHT_THEME}>
       <DropdownProvider>
@@ -17,5 +13,5 @@ createRoot(document.getElementById("root")!).render(
         <App />
       </DropdownProvider>
     </ThemeProvider>
-  </StrictMode>
+  </StrictMode>,
 );
