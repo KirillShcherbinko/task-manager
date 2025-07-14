@@ -1,69 +1,81 @@
-# React + TypeScript + Vite
+# Приложение Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+Приложение для управления задачами с возможностью:
+- Просмотра списка задач
+- Добавления новых задач
+- Редактирования существующих задач
+- Удаления задач
+- Фильтрации задач по категории, статусу и приоритету
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Установка и запуск
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+1. Клонировать репозиторий:
+```bash
+git clone <repository-url>
+cd task-manager
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Установить зависимости:
+```bash
+npm install
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+3. Запустить приложение в режиме разработки:
+```bash
+npm run dev
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+4. Открыть в браузере:
+```
+http://localhost:3000
+```
+
+## 🛠 Технологический стек
+
+### Основные технологии
+- **React** (с TypeScript)
+- **React Router v6** для маршрутизации
+- **Admiral DS** как фреймворк для UI-компонентов и иконок
+- **Jotai** для управления состоянием
+- **CSS Modules** для стилизации
+
+### Дополнительные инструменты
+- **Vite** как сборщик проекта
+- **Prettier** для форматирования кода
+
+## Функциональность
+
+### Основные возможности
+- **Просмотр списка задач** в виде адаптивных карточек
+- **Добавление/редактирование/удаление** задач
+- **Фильтрация** задач по:
+  - Категории (Bug / Feature / Documentation / Refactor / Test)
+  - Статусу (To Do / In Progress / Done)
+  - Приоритету (Low / Medium / High)
+- **Адаптивный интерфейс** для desktop и mobile устройств
+
+### Маршруты
+- `/` - Главная страница со списком задач и фильтрами
+- `/edit/task/:taskId` - Страница редактирования задачи
+- `/add/task` - Страница создания новой задачи
+
+## Компоненты
+
+- **TaskList** - Отображает список задач
+- **TaskItem** - Карточка отдельной задачи
+- **TaskDetail** - Форма редактирования и создания задачи
+- **TaskFilter** - Компонент фильтрации задач
+
+## Архитектура
+
+```
+/src
+  /app             # Инициализация приложения
+  /components      # UI компоненты
+  /data            # Моковые данные для задач
+  /pages           # Страницы приложения
+  /services        # Глобальное хранилище
+  /shared          # Переиспользуемые UI компоненты и функции
 ```
