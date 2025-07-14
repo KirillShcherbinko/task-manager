@@ -51,3 +51,7 @@ export const filteredTasksAtom = atom<TTaskItem[]>((get) => {
     return titleMatches && categoryMatches && statusMatches && priorityMatches;
   });
 });
+
+////////// Ошибки //////////
+export const titleErrorAtom = atom<string>('');
+export const descriptionErrorAtom = atom<string>('');

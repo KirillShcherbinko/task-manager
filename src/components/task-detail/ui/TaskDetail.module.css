@@ -1,0 +1,11 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ButtonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

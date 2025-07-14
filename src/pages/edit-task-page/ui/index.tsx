@@ -1,3 +1,5 @@
+import { TaskDetail } from '@/components/task-detail';
+
 export const EditTaskPage = () => {
-  return <>edit</>;
+  return <TaskDetail mode="edit" />;
 };
