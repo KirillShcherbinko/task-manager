@@ -19,6 +19,7 @@
 
 @media screen and (max-width: 625px) {
   .List {
+    max-width: 360px;
     width: 100%;
     align-items: center;
     grid-template-columns: 1fr;

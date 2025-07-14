@@ -7,7 +7,7 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   height: 100%;
   background: #f2f4f7;
@@ -16,6 +16,7 @@ body {
 #root {
   max-width: 1280px;
   height: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 1rem 2rem;
 }

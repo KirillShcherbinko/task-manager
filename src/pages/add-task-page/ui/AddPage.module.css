@@ -1,0 +1,16 @@
+.AddPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  width: 100%;
+}
+
+.Title {
+  font-size: 48px;
+}
+
+.HomeButton {
+  width: 100%;
+}

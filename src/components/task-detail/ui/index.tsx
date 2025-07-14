@@ -63,11 +63,14 @@ export const TaskDetail = ({ mode }: ITaskDetailProps) => {
     if (editedTask) {
       setEditedTask(null);
     }
+
+    handleReset();
   };
 
   return (
     <form className={Style.Form} onSubmit={onSubmit} onReset={handleReset}>
       <InputField
+        className={Style.Input}
         data-container-id="titleInput"
         name="title"
         label="Title"
@@ -77,14 +80,17 @@ export const TaskDetail = ({ mode }: ITaskDetailProps) => {
         onChange={handleChange}
       />
       <TextField
+        className={Style.Input}
         data-container-id="descriptionInput"
         name="description"
         label="Description"
+        status={descriptionError ? 'error' : undefined}
         extraText={descriptionError}
         value={description}
         onChange={handleChange}
       />
       <SelectField
+        className={Style.Input}
         data-container-id="categorySelect"
         name="category"
         label="Category"
@@ -99,6 +105,7 @@ export const TaskDetail = ({ mode }: ITaskDetailProps) => {
         ))}
       </SelectField>
       <SelectField
+        className={Style.Input}
         data-container-id="statusSelect"
         name="status"
         label="Status"
@@ -113,6 +120,7 @@ export const TaskDetail = ({ mode }: ITaskDetailProps) => {
         ))}
       </SelectField>
       <SelectField
+        className={Style.Input}
         data-container-id="prioritySelect"
         name="priority"
         label="Priority"

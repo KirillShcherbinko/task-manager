@@ -4,15 +4,15 @@ import { Link } from 'react-router';
 
 import { Button, T } from '@admiral-ds/react-ui';
 
-import Style from './EditPage.module.css';
+import Style from './AddPage.module.css';
 
-export const EditTaskPage = () => {
+export const AddTaskPage = () => {
   return (
-    <div className={Style.EditPage}>
+    <div className={Style.AddPage}>
       <T className={Style.Title} as="h1" font="Additional/L-bold">
-        <p>Edit Task</p>
+        <p>Add Task</p>
       </T>
-      <TaskDetail mode="edit" />
+      <TaskDetail mode="add" />
       <Link to="/">
         <Button className={Style.HomeButton}>Home</Button>
       </Link>

@@ -1,3 +1,4 @@
+import { AddTaskPage } from '@/pages/add-task-page';
 import { EditTaskPage } from '@/pages/edit-task-page';
 import { HomePage } from '@/pages/home-page';
 
@@ -12,6 +13,10 @@ export const AppRouter = () => {
     {
       path: '/edit/task/:taskId',
       element: <EditTaskPage />,
+    },
+    {
+      path: '/add/task',
+      element: <AddTaskPage />,
     },
   ]);
 
