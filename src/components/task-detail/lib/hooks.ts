@@ -1,5 +1,5 @@
 import {
-  addTaskAtom,
+  createTaskAtom,
   descriptionErrorAtom,
   editedTaskAtom,
   titleErrorAtom,
@@ -18,7 +18,7 @@ export const useTaskDetailSubmit = () => {
   const setTitleError = useSetAtom(titleErrorAtom);
   const setDescriptionError = useSetAtom(descriptionErrorAtom);
 
-  const addTask = useSetAtom(addTaskAtom);
+  const createTask = useSetAtom(createTaskAtom);
   const updateTask = useSetAtom(updateTaskAtom);
 
   return (mode: TTaskDetailMode, formData: TTaskDetailForm) => {
@@ -39,7 +39,7 @@ export const useTaskDetailSubmit = () => {
     switch (mode) {
       case ADD_MODE: {
         const id = generateNumericId();
-        addTask({ id, ...formData });
+        createTask({ id, ...formData });
 
         return true;
       }

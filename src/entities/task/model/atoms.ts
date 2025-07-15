@@ -1,8 +1,8 @@
 import type { TTaskCategory, TTaskItem, TTaskPriority, TTaskStatus } from '@/components/task-item';
-import { initialTasks } from '@/data';
 import { atom } from 'jotai';
 
-export const tasksAtom = atom<TTaskItem[]>(initialTasks);
+/////////// Атомы задач //////////
+export const tasksAtom = atom<TTaskItem[]>([]);
 export const editedTaskAtom = atom<TTaskItem | null>(null);
 
 ////////// Действия над списком задач //////////
@@ -51,7 +51,3 @@ export const filteredTasksAtom = atom<TTaskItem[]>((get) => {
     return titleMatches && categoryMatches && statusMatches && priorityMatches;
   });
 });
-
-////////// Ошибки //////////
-export const titleErrorAtom = atom<string>('');
-export const descriptionErrorAtom = atom<string>('');
