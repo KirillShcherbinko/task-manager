@@ -1,6 +1,6 @@
-import type { TTaskItem } from '@/components/task-item';
+import type { TTask } from '@/components/task-item';
 
-export const initialTasks: TTaskItem[] = [
+export const initialTasks: TTask[] = [
   {
     id: 1,
     title: 'Fix login page validation',

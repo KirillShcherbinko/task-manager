@@ -1,5 +1,7 @@
 export { TaskItem } from './ui/task-item';
 
+export { fetchTasks, createTask, updateTask, deleteTask } from './api/tasks-api';
+
 export {
   tasksAtom,
   editedTaskAtom,
@@ -14,7 +16,7 @@ export {
 } from './model/atoms';
 export { taskSchema } from './model/schemas';
 export type {
-  TTaskItem,
+  TTask,
   TTaskCategory,
   TTaskPriority,
   TTaskStatus,

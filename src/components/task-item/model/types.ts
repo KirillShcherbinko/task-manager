@@ -2,7 +2,7 @@ export type TTaskCategory = 'Bug' | 'Feature' | 'Documentation' | 'Refactor' | '
 export type TTaskStatus = 'To Do' | 'In Progress' | 'Done';
 export type TTaskPriority = 'High' | 'Medium' | 'Low';
 
-export type TTaskItem = {
+export type TTask = {
   id: number;
   title: string;
   description?: string;

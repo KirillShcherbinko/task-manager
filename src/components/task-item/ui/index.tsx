@@ -14,11 +14,11 @@ import { Divider, T } from '@admiral-ds/react-ui';
 import { ActionButton, IconTag } from '@/shared';
 
 import { CATEGORY_ICON_MAP, PRIORITY_KIND_MAP, STATUS_KIND_MAP } from '../model/consts';
-import type { TTaskItem } from '../model/types';
+import type { TTask } from '../model/types';
 import Style from './TaskItem.module.css';
 
 export interface ITaskItemProps {
-  task: TTaskItem;
+  task: TTask;
 }
 
 export const TaskItem = ({ task }: ITaskItemProps) => {

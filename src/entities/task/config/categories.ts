@@ -10,6 +10,8 @@ import {
 
 import type { TTaskCategory } from '../model/types';
 
+export const TASK_CATEGORIES = ['Bug', 'Feature', 'Documentation', 'Refactor', 'Test'] as const;
+
 export const CATEGORY_LABELS: Record<TTaskCategory, string> = {
   Bug: 'Bug',
   Feature: 'Feature',

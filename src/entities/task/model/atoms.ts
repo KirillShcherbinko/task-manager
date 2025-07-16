@@ -1,12 +1,13 @@
-import type { TTaskCategory, TTaskItem, TTaskPriority, TTaskStatus } from '@/components/task-item';
 import { atom } from 'jotai';
 
+import type { TTask, TTaskCategory, TTaskPriority, TTaskStatus } from './types';
+
 /////////// Атомы задач //////////
-export const tasksAtom = atom<TTaskItem[]>([]);
-export const editedTaskAtom = atom<TTaskItem | null>(null);
+export const tasksAtom = atom<TTask[]>([]);
+export const editedTaskAtom = atom<TTask | null>(null);
 
 ////////// Действия над списком задач //////////
-export const createTaskAtom = atom(null, (_get, set, newTask: TTaskItem) => {
+export const createTaskAtom = atom(null, (_get, set, newTask: TTask) => {
   set(tasksAtom, (tasks) => [...tasks, newTask]);
 });
 
@@ -16,7 +17,7 @@ export const deleteTaskAtom = atom(null, (_get, set, taskToDeleteId: number) => 
 
 export const updateTaskAtom = atom(
   null,
-  (_get, set, taskToUpdateId: number, newTaskData: Partial<TTaskItem>) => {
+  (_get, set, taskToUpdateId: number, newTaskData: Partial<TTask>) => {
     set(tasksAtom, (tasks) =>
       tasks.map((task) => (task.id === taskToUpdateId ? { ...task, ...newTaskData } : task)),
     );
@@ -29,7 +30,7 @@ export const categoryFilterAtom = atom<TTaskCategory[]>([]);
 export const statusFilterAtom = atom<TTaskStatus[]>([]);
 export const priorityFilterAtom = atom<TTaskPriority[]>([]);
 
-export const filteredTasksAtom = atom<TTaskItem[]>((get) => {
+export const filteredTasksAtom = atom<TTask[]>((get) => {
   const tasks = get(tasksAtom);
 
   const titleFilterValue = get(titleFilterAtom).trim().toLocaleLowerCase();

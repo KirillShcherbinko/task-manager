@@ -10,14 +10,14 @@ import Style from './ui.module.css';
 import { CATEGORY_ICONS, CATEGORY_LABELS } from '../../config/categories';
 import { PRIORITY_KINDS, PRIORITY_LABELS } from '../../config/priorities';
 import { STATUS_KINDS, STATUS_LABELS } from '../../config/statuses';
-import type { TTaskItem } from '../../model/types';
+import type { TTask } from '../../model/types';
 
-export interface ITaskItemProps {
-  task: TTaskItem;
+type TTaskItemProps = {
+  task: TTask;
   actionsSlot?: ReactNode[];
-}
+};
 
-export const TaskItem = ({ task, actionsSlot }: ITaskItemProps) => {
+export const TaskItem = ({ task, actionsSlot }: TTaskItemProps) => {
   const { title, description, category, status, priority, createdAt } = task;
 
   const creationDate = createdAt.toDateString();
@@ -36,6 +36,7 @@ export const TaskItem = ({ task, actionsSlot }: ITaskItemProps) => {
           ))}
         </div>
       </header>
+
       <main className={Style.Main}>
         <T as="article" font="Main/S">
           {description}
@@ -44,7 +45,9 @@ export const TaskItem = ({ task, actionsSlot }: ITaskItemProps) => {
           {creationDate}
         </T>
       </main>
+
       <Divider />
+
       <footer className={Style.Footer}>
         <IconTag icon={CATEGORY_ICONS[category]}>{CATEGORY_LABELS[category]}</IconTag>
         <IconTag kind={STATUS_KINDS[status]} icon={<SystemTimeOutline />}>
