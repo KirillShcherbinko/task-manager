@@ -1,6 +1,13 @@
 import { atom } from 'jotai';
 
-import type { TTask, TTaskCategory, TTaskPriority, TTaskStatus } from './types';
+import type {
+  TTask,
+  TTaskActionError,
+  TTaskCategory,
+  TTaskPriority,
+  TTaskStatus,
+  TTaskValidationError,
+} from './types';
 
 /////////// Атомы задач //////////
 export const tasksAtom = atom<TTask[]>([]);
@@ -52,3 +59,7 @@ export const filteredTasksAtom = atom<TTask[]>((get) => {
     return titleMatches && categoryMatches && statusMatches && priorityMatches;
   });
 });
+
+////////// Значения ошибок //////////
+export const validationErrorsAtom = atom<TTaskValidationError>({});
+export const actionErrorsAtom = atom<TTaskActionError[]>([]);

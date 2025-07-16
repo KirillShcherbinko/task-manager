@@ -20,3 +20,6 @@ export const generateNumericId = () => {
   const nanoid = customAlphabet('0123456789');
   return Number(nanoid());
 };
+
+export const createReverseObject = <T extends Record<string, string>>(labels: T) =>
+  Object.fromEntries(Object.entries(labels).map(([key, value]) => [value, key]));

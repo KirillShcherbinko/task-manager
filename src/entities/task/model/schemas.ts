@@ -16,6 +16,7 @@ export const taskSchema = z.object({
       MAX_DESCRIPTION_LENGTH,
       `Description must be shorter then ${MAX_DESCRIPTION_LENGTH} characters`,
     )
+    .transform((value) => (value.trim() === '' ? null : value))
     .optional()
     .nullable(),
   category: z.enum(TASK_CATEGORIES),

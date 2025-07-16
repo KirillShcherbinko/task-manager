@@ -4,4 +4,4 @@ export { IconTag } from './ui/icon-tag';
 
 export { axiosInstance } from './api/axios-instance';
 
-export { getDirtyFields, generateNumericId } from './lib/utils';
+export { getDirtyFields, generateNumericId, createReverseObject } from './lib/utils';

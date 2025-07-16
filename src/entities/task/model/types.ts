@@ -12,7 +12,7 @@ export type TTaskPriority = (typeof TASK_PRIORITIES)[number];
 export type TTask = {
   id: number;
   title: string;
-  description?: string;
+  description?: string | null;
   category: TTaskCategory;
   status: TTaskStatus;
   priority: TTaskPriority;
@@ -20,3 +20,6 @@ export type TTask = {
 };
 
 export type TTaskFormData = z.infer<typeof taskSchema>;
+
+export type TTaskValidationError = Partial<Record<keyof TTaskFormData, string>>;
+export type TTaskActionError = string;
