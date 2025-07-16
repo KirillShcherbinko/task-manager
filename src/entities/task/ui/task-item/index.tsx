@@ -20,13 +20,13 @@ type TTaskItemProps = {
 export const TaskItem = ({ task, actionsSlot }: TTaskItemProps) => {
   const { title, description, category, status, priority, createdAt } = task;
 
-  const creationDate = createdAt.toDateString();
+  const creationDate = new Date(createdAt).toDateString();
 
   return (
     <div className={Style.Card}>
       <header className={Style.Header}>
         <div className={Style.Title}>
-          <T as="h3" font="Additional/L-bold">
+          <T as="h3" font="Header/H5">
             {title}
           </T>
         </div>
@@ -38,10 +38,10 @@ export const TaskItem = ({ task, actionsSlot }: TTaskItemProps) => {
       </header>
 
       <main className={Style.Main}>
-        <T as="article" font="Main/S">
+        <T as="article" font="Additional/L">
           {description}
         </T>
-        <T as="p" font="Main/S" color="Neutral/Neutral 50">
+        <T as="p" font="Additional/S" color="Neutral/Neutral 40">
           {creationDate}
         </T>
       </main>

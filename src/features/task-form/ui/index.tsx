@@ -82,6 +82,7 @@ export const TaskForm = () => {
 
       {selectFieldConfig.map((selectField) => (
         <SelectField
+          key={selectField.props['data-container-id']}
           className={Style.Input}
           {...selectField.props}
           mode="select"

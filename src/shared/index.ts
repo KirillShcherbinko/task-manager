@@ -1,5 +1,5 @@
 export { ActionButton } from './ui/action-button';
-export { CheckboxFilter } from './ui/checkbox-filter';
+export { CheckboxDropMenu } from './ui/checkbox-drop-menu';
 export { IconTag } from './ui/icon-tag';
 
 export { axiosInstance } from './api/axios-instance';

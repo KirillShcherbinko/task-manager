@@ -1,6 +1,6 @@
-import { AddTaskPage } from '@/pages/add-task-page';
-import { EditTaskPage } from '@/pages/edit-task-page';
+import { CreateTaskPage } from '@/pages/create-task-page';
 import { HomePage } from '@/pages/home-page';
+import { UpdateTaskPage } from '@/pages/update-task-page';
 
 import { useRoutes } from 'react-router';
 
@@ -11,12 +11,12 @@ export const AppRouter = () => {
       element: <HomePage />,
     },
     {
-      path: '/edit/task/:taskId',
-      element: <EditTaskPage />,
+      path: '/task/:id',
+      element: <UpdateTaskPage />,
     },
     {
-      path: '/add/task',
-      element: <AddTaskPage />,
+      path: '/task/new',
+      element: <CreateTaskPage />,
     },
   ]);
 

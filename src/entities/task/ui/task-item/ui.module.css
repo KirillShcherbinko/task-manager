@@ -8,7 +8,6 @@
   background: #ffffff;
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.16);
   border-radius: 4px;
-  word-break: break-all;
   will-change: transform;
   transition: transform 0.2s ease-out;
 }
@@ -19,7 +18,7 @@
 
 .Header {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
 }
 
@@ -27,6 +26,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .ButtonGroup {
@@ -37,8 +39,10 @@
 
 .Main {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 4px;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .Footer {

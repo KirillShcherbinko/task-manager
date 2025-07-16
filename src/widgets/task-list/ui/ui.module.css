@@ -1,0 +1,21 @@
+.List {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1024px) {
+  .List {
+    width: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .List {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

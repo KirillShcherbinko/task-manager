@@ -1,12 +1,12 @@
-import { TaskFilter } from '@/components/task-filter';
-import { TaskList } from '@/components/task-list';
+import { Header } from '@/widgets/header';
+import { TaskList } from '@/widgets/task-list';
 
-import Style from './HomePage.module.css';
+import Style from './ui.module.css';
 
 export const HomePage = () => {
   return (
     <main className={Style.HomePage}>
-      <TaskFilter />
+      <Header />
       <TaskList />
     </main>
   );
